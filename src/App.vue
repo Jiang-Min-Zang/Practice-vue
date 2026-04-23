@@ -26,6 +26,8 @@ import { RouterView } from "vue-router";
       <RouterLink to="/home" active-class="xiaozhupeiqi">首頁</RouterLink>
       <RouterLink to="/news" active-class="xiaozhupeiqi">新聞</RouterLink>
       <RouterLink to="/about" active-class="xiaozhupeiqi">關於</RouterLink>
+      <RouterLink to="/Products" active-class="xiaozhupeiqi">商品</RouterLink>
+      <RouterLink to="/Employee" active-class="xiaozhupeiqi">人員</RouterLink>
     </div>
     <!-- 展示區 -->
     <div class="main-content">
@@ -62,7 +64,7 @@ import { RouterView } from "vue-router";
 .navigate {
   display: flex;
   justify-content: space-around;
-  margin: 0px 20px;
+  margin: 0px 15px;
 }
 .navigate a {
   display: flex;
@@ -70,7 +72,7 @@ import { RouterView } from "vue-router";
 
   gap: 10px;
   text-align: center;
-  width: 90px;
+  width: 65px;
   height: 40px;
   line-height: 40px;
   border-radius: 10px;
@@ -83,7 +85,7 @@ import { RouterView } from "vue-router";
 .navigate a.xiaozhupeiqi {
   background-color: #64967e;
   color: #ffc268;
-  font-weight: 900;
+  font-weight: 800;
   text-shadow: 0 0 1px black;
   font-family: 微软雅黑;
 }
