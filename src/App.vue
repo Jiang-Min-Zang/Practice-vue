@@ -4,6 +4,8 @@ import Person from "./components/Person.vue";
 import shopping from "./components/shopping-cart.vue";
 import vbind from "./components/v-bind.vue";
 import AppHeader from "./components/AppHeader.vue";
+import Count from "./components/Count.vue";
+import LoveTalk from "./components/LoveTalk.vue";
 import watch from "./components/watch.vue";
 
 import { type Persons } from "./types";
@@ -48,6 +50,11 @@ import { RouterView } from "vue-router";
   <div>
     <hr />
     <vbind />
+  </div>
+  <div>
+    <Count />
+    <br />
+    <LoveTalk />
   </div>
 </template>
 
