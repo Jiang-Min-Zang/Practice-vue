@@ -15,7 +15,7 @@ let personList = reactive<Persons>([
   { id: "2", name: "旻展", age: 27 },
   { id: "3", name: "靜雯", age: 30, x: 7 },
 ]);
-console.log(personList);
+// console.log(personList);
 import { RouterView } from "vue-router";
 </script>
 

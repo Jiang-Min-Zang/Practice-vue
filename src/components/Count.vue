@@ -1,6 +1,7 @@
 <template>
   <div class="count">
-    <h2>当前求和为：{{ sum }}</h2>
+    <h2>當前求和：{{ countStore.sum }}</h2>
+    <h3>所在地:{{countStore.school}}--{{countStore.address}}</h3>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -13,16 +14,33 @@
 
 <script setup lang="ts" name="Count">
 import { ref } from "vue";
+import { useCountStore } from "../store/count";
+
+const countStore = useCountStore()
+console.log("-------------",countStore.sum)
 // 数据
 let sum = ref(1); // 当前求和
 let n = ref(1); // 用户选择的数字
 
 // 方法
+
+
 function add() {
-  sum.value += n.value;
+  //第一種寫法
+  // countStore.sum +=n.value  
+  // countStore.school = "弘光科大"
+  // countStore.address = "沙鹿"
+  //第二種寫法 批量修改
+  // countStore.$patch({
+  //   sum:888,
+  //   school:"弘光科大",
+  //   address:"沙鹿"
+  // })
+  //第三種寫法
+  countStore.increment(n.value)
 }
 function minus() {
-  sum.value -= n.value;
+  countStore.sum -= n.value;
 }
 </script>
 

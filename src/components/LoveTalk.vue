@@ -2,7 +2,7 @@
   <div class="talk">
     <button @click="getLoveTalk">获取一句土味情话</button>
     <ul>
-      <li v-for="talk in talkList" :key="talk.id">{{ talk.title }}</li>
+      <li v-for="talk in talkStore.talkList" :key="talk.id">{{ talk.title }}</li>
     </ul>
   </div>
 </template>
@@ -11,6 +11,9 @@
 import { reactive } from "vue";
 import axios from "axios";
 import { nanoid } from "nanoid";
+import { useTalkStore } from "../store/talk";
+
+const talkStore = useTalkStore()
 // 数据
 let talkList = reactive([
   { id: "ftrfasdf01", title: "今天你有点怪，哪里怪？怪好看的！" },
