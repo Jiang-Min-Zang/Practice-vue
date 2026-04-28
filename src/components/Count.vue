@@ -1,7 +1,8 @@
 <template>
   <div class="count">
-    <h2>當前求和：{{ countStore.sum }}</h2>
-    <h3>所在地:{{countStore.school}}--{{countStore.address}}</h3>
+    <h2>當前求和：{{ sum }}</h2>
+    <h3>所在地:{{ school }}--{{ address }}</h3>
+    <h3>10倍數為{{ bigSum }}--------{{ upperschool }}</h3>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -13,21 +14,22 @@
 </template>
 
 <script setup lang="ts" name="Count">
-import { ref } from "vue";
+import { ref, toRefs } from "vue";
 import { useCountStore } from "../store/count";
+import { storeToRefs } from "pinia";
 
-const countStore = useCountStore()
-console.log("-------------",countStore.sum)
+const countStore = useCountStore();
+const { sum, school, address, bigSum, upperschool } = storeToRefs(countStore);
+// console.log("-------------",countStore.sum)
 // 数据
-let sum = ref(1); // 当前求和
+// let sum = ref(1); // 当前求和
 let n = ref(1); // 用户选择的数字
 
 // 方法
 
-
 function add() {
   //第一種寫法
-  // countStore.sum +=n.value  
+  // countStore.sum +=n.value
   // countStore.school = "弘光科大"
   // countStore.address = "沙鹿"
   //第二種寫法 批量修改
@@ -37,7 +39,7 @@ function add() {
   //   address:"沙鹿"
   // })
   //第三種寫法
-  countStore.increment(n.value)
+  countStore.increment(n.value);
 }
 function minus() {
   countStore.sum -= n.value;
