@@ -54,3 +54,20 @@ export const useCountStore = defineStore("count", () => {
     increment,
   };
 });
+
+export const useUserStore = defineStore("user", () => {
+  const userName = ref("小明");
+  const userAge = ref(18);
+  const updateAge = () => {
+    userAge.value = userAge.value * 2 - 10;
+  };
+  const displayName = computed(() => {
+    return userName.value + "同學";
+  });
+  return {
+    userName,
+    userAge,
+    updateAge,
+    displayName,
+  };
+});

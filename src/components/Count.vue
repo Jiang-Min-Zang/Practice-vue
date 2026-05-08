@@ -11,15 +11,22 @@
     <button @click="add">加</button>
     <button @click="minus">减</button>
   </div>
+
+  <div class="count">
+    <h3>{{ userName }}--{{ userAge }}--{{ displayName }}</h3>
+  </div>
 </template>
 
 <script setup lang="ts" name="Count">
 import { ref, toRefs } from "vue";
-import { useCountStore } from "../store/count";
+import { useCountStore, useUserStore } from "../store/count";
 import { storeToRefs } from "pinia";
 
 const countStore = useCountStore();
 const { sum, school, address, bigSum, upperschool } = storeToRefs(countStore);
+const { increment } = countStore;
+const userStore = useUserStore();
+const { userName, userAge, displayName } = storeToRefs(userStore);
 // console.log("-------------",countStore.sum)
 // 数据
 // let sum = ref(1); // 当前求和
@@ -39,7 +46,7 @@ function add() {
   //   address:"沙鹿"
   // })
   //第三種寫法
-  countStore.increment(n.value);
+  increment(n.value);
 }
 function minus() {
   countStore.sum -= n.value;
