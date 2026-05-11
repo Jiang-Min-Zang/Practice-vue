@@ -8,6 +8,7 @@ import {
 import Home from "../pages/Home.vue";
 import News from "../pages/News/News.vue";
 import About from "../pages/About.vue";
+import LoginvView from "../pages/Bankend/LoginView.vue";
 import newsDetail from "../pages/News/newsDetail.vue";
 import Products from "../pages/Products/index.vue";
 import ProdustsList from "../pages/Products/List.vue";
@@ -70,6 +71,10 @@ const router = createRouter({
           },
         },
       ],
+    },
+    {
+      path: "/LoginvView",
+      component: LoginvView,
     },
     {
       path: "/",
