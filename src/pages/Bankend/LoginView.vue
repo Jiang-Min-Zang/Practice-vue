@@ -7,7 +7,13 @@ import Login from "../../components/Login.vue";
   <div class="container-box">
     <div class="container-login">
       <div class="brand-img">
-        <img src="/src/assets/Bankend/燒肉圖.jpg" alt="" />
+        <picture>
+          <source
+            srcset="/src/assets/Bankend/燒肉640x480.jpg"
+            media="(min-width: 768px)"
+          />
+          <img src="/src/assets/Bankend/燒肉圖.jpg" alt="" />
+        </picture>
       </div>
       <div class="login">
         <Login />
@@ -53,7 +59,7 @@ import Login from "../../components/Login.vue";
         // height: 50vh;
         img {
           width: 100%;
-          height: 45vh;
+          height: 100%;
         }
       }
       .login {

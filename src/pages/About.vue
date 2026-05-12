@@ -2,12 +2,13 @@
   <div class="about">
     <router-link to="/" class="button-style">回導覽列</router-link>
     <h2>這是說明</h2>
+    <bootstrap-test />
   </div>
 </template>
 
 <script setup lang="ts" name="About">
 import { onMounted, onUnmounted } from "vue";
-
+import bootstrapTest from "../components/bootstrapTest.vue";
 onMounted(() => {
   console.log("About出生");
 });

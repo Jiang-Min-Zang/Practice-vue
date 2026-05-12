@@ -6,6 +6,8 @@ import App from "./App.vue";
 import { createPinia } from "pinia";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+import axios from "axios";
+import VueAxios from "vue-axios";
 // createApp(App).mount("#app");
 //引入路由器
 import router from "./router";
@@ -17,5 +19,7 @@ const pinia = createPinia();
 app.use(pinia);
 //使用路由器
 app.use(router);
+
+app.use(VueAxios, axios);
 //掛載整個應用到app容器中
 app.mount("#app");

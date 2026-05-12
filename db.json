@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "username": "Jacky",
+      "email": "jacky14440@gmail.com",
+      "password": "mike123123",
+      "id": "1"
+    },
+    {
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "testtest123",
+      "id": "5RCsH7PZIBk"
+    },
+    {
+      "username": "mike",
+      "email": "mike028@betrnkonline.com",
+      "password": "test4714",
+      "id": "I7zaOhbU8c8"
+    },
+    {
+      "username": "test2",
+      "email": "m@gmail.com",
+      "password": "testtest",
+      "id": "IAdXlWmKRJM"
+    }
+  ],
+  "profile": {
+    "name": "My System"
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
