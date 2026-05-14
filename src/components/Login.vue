@@ -57,6 +57,7 @@
 
 <script setup lang="ts" name="Header">
 import { ref } from "vue";
+import router from "../router";
 import axios from "axios";
 // 控制目前的狀態：true = 登入模式, false = 註冊模式
 const isLogin = ref(true);
@@ -105,7 +106,7 @@ const vaildateForm = () => {
 };
 const handleSubmit = async () => {
   const isFromVaild = vaildateForm();
-  console.log("驗證結果是：", isFromVaild);
+  // console.log("驗證結果是：", isFromVaild);
   if (!isFromVaild) {
     console.log("驗證失敗，不發送請求");
 
@@ -117,13 +118,16 @@ const handleSubmit = async () => {
       const res = await axios.get(
         `http://localhost:3000/users?email=${formData.value.email}&password=${formData.value.password}`,
       );
-      console.log(res, "--------------------");
+      // console.log(res, "--------------------");
       if (res.data.length > 0) {
+        localStorage.setItem("users", JSON.stringify(res.data[0]));
+        console.log("users", JSON.stringify(res.data[0]));
         alert("登入成功，歡迎" + res.data[0].username);
+        router.push("/Dashboard");
       } else {
         alert("帳號密碼錯誤");
       }
-      console.log("執行登入邏輯", formData.value);
+      // console.log("執行登入邏輯", formData.value);
     } else {
       const checkRes = await axios.get(
         `http://localhost:3000/users?username=${formData.value.username}`,

@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
 // import test from "./project/test.vue";  取一個名字放到createAPP裡+上題目的主檔案路徑
+
 // 引入pinia
 import { createPinia } from "pinia";
 import "bootstrap/dist/css/bootstrap.min.css";
