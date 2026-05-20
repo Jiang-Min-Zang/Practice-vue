@@ -1,3 +1,4 @@
+```txt
 src/
 ├── api/ # 放置所有 axios 請求，按功能分模組 (如 user.ts, product.ts)
 ├── assets/ # 靜態資源：CSS 變數、圖片、字體、全域樣式
@@ -21,6 +22,7 @@ src/
 │ └── FM-Newsletter/ # Frontend Mentor 題目 B
 ├── assets/ # 圖片與 CSS
 └── router/ # 路由：負責切換顯示哪一個 Page
+```
 
 ## 📁 資料夾規範
 
@@ -45,3 +47,8 @@ src/
 ## 0514
 
 完成首頁 登入邏輯可以轉導到首頁 有把帳號資料顯示出來 還有刪除按鈕
+
+## 0519
+
+hook -->拆出login邏輯、簡單的後臺管理系統
+完成編輯按鈕、刪除按鈕新增再確認提示窗

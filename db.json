@@ -4,13 +4,36 @@
       "username": "Jacky",
       "email": "jacky14440@gmail.com",
       "password": "mike123123",
-      "id": "1"
+      "id": "1",
+      "role": "admin"
     },
     {
       "username": "mike",
       "email": "mike028@betrnkonline.com",
       "password": "test4714",
-      "id": "I7zaOhbU8c8"
+      "id": "I7zaOhbU8c8",
+      "role": "admin"
+    },
+    {
+      "username": "測試",
+      "email": "test@gmail.com",
+      "password": "test123",
+      "id": "3GnGc54VnDI",
+      "role": "user"
+    },
+    {
+      "username": "測試2",
+      "email": "m@gmail.com",
+      "password": "test123",
+      "role": "user",
+      "id": "VPQDFY8csV8"
+    },
+    {
+      "username": "測試3",
+      "email": "mm@gmail.com",
+      "password": "mm1234",
+      "role": "user",
+      "id": "LR5bTBWn6u8"
     }
   ],
   "profile": {
