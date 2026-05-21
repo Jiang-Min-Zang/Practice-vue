@@ -13,7 +13,7 @@
     <h3>後台練習</h3>
     <img class="bankend-icon" src="../assets/Bankend/backend.png" alt="" />
     <nav>
-      <li><router-link to="/LoginvView">餐飲後台</router-link></li>
+      <li><router-link to="/LoginvView">練習後台</router-link></li>
     </nav>
   </div>
   <hr />

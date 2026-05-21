@@ -80,10 +80,7 @@ export const useLogin = () => {
         if (checkRes.data.length > 0) {
           alert("姓名已被取走");
         } else {
-          const res = await axios.post(
-            "http://localhost:3000/users",
-            formData.value,
-          );
+          await axios.post("http://localhost:3000/users", formData.value);
           alert("註冊成功，請重新登入");
           isLogin.value = true;
         }
