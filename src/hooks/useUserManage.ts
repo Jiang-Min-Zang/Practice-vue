@@ -56,7 +56,7 @@ export const useUserManage = () => {
   const updateUser = async () => {
     if (!editingUser.value) {
       alert("非管理員，關閉");
-      return;
+      return; //守衛條款
     }
     try {
       await axios.put(
@@ -101,6 +101,7 @@ export const useUserManage = () => {
     isAdmin,
     isModalOpen,
     editingUser,
+    currentUser,
     handleLogout,
     deleteUser,
     openEditModal,

@@ -1,6 +1,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import router from "../router";
+import Swal from "sweetalert2";
 
 export const useLogin = () => {
   // 控制目前的狀態：true = 登入模式, false = 註冊模式
@@ -67,10 +68,20 @@ export const useLogin = () => {
         if (res.data.length > 0) {
           localStorage.setItem("users", JSON.stringify(res.data[0]));
           console.log("users", JSON.stringify(res.data[0]));
-          alert("登入成功，歡迎" + res.data[0].username);
+          // alert("登入成功，歡迎" + res.data[0].username);
+          Swal.fire({
+            title: "登入成功，歡迎" + res.data[0].username,
+            icon: "success",
+            timer: 3000,
+            position: "top",
+          });
           router.push("/Dashboard");
         } else {
-          alert("帳號密碼錯誤");
+          Swal.fire({
+            title: "帳號密碼錯誤",
+            icon: "error",
+            timer: 3000,
+          });
         }
         // console.log("執行登入邏輯", formData.value);
       } else {

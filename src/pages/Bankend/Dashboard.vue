@@ -2,7 +2,14 @@
   <div class="container mt-5">
     <div class="topBar">
       <h2>餐廳管理後台</h2>
-      <button @click="handleLogout" class="btn btn-outline-danger">登出</button>
+      <Navbar :user="currentUser">
+        <template #action-button>
+          <button @click="handleLogout" class="btn btn-outline-danger">
+            登出
+          </button>
+        </template>
+      </Navbar>
+      <!-- <button @click="handleLogout" class="btn btn-outline-danger">登出</button> -->
     </div>
     <div class="row">
       <div class="col-sm-2">
@@ -115,39 +122,18 @@
 
 <script setup>
 import { useUserManage } from "../../hooks/useUserManage";
+import Navbar from "../../components/Navbar.vue";
 const {
   userList,
   isAdmin,
   isModalOpen,
+  currentUser,
   editingUser,
   handleLogout,
   deleteUser,
   openEditModal,
   updateUser,
 } = useUserManage();
-// import { ref, onMounted } from "vue";
-// import axios from "axios";
-// import { useRouter } from "vue-router";
-// const router = useRouter();
-// const userList = ref([]);
-// const handleLogout = () => {
-//   localStorage.removeItem("users");
-//   router.push("/LoginvView");
-// };
-// const fetchUsers = async () => {
-//   const res = await axios.get("http://localhost:3000/users");
-//   userList.value = res.data;
-// };
-// // 刪除使用者
-// const deleteUser = async (id) => {
-//   await axios.delete(`http://localhost:3000/users/${id}`);
-//   fetchUsers();
-// };
-
-// onMounted(() => {
-//   fetchUsers();
-//   console.log("要記得把她打開");
-// });
 </script>
 
 <style lang="scss" scoped>
