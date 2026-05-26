@@ -37,7 +37,7 @@ src/
 2. 在 `src/router/` 註冊新的路由。
 3. 優先考慮使用 `src/components/` 裡的共用組件以保持樣式統一。
 
-## 🛠️ 開發日記
+## 🛠️ 開發日記(備忘錄)
 
 ## 0513
 
@@ -56,3 +56,15 @@ hook -->拆出login邏輯、簡單的後臺管理系統
 ## 0522
 
 嘗試Prop到子層，使用SweetAlert2替換原生
+
+## 0525
+
+1. 新增api資料夾，新增預設ts檔，後續將登入跟管理流程補上
+2. 開始第一份切版網頁-購物車(Product list with cart)
+
+## 0526
+
+1. 成功取得圖片資料 db-json路徑
+2. 進度規劃
+   (1.db.json資料放到api資料夾的product.ts 並且父層能夠導入2.寫一個共用組件card，index.vue prop資料進來(web,mobile,平板,縮圖)
+   3.index.vue 寫出三種RWD狀態4.寫一個購物車彈窗組件5.開始寫JS邏輯)

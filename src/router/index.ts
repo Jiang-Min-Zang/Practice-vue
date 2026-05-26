@@ -11,6 +11,7 @@ import About from "../pages/About.vue";
 import LoginvView from "../pages/Bankend/LoginView.vue";
 import Dashboard from "../pages/Bankend/Dashboard.vue";
 import newsDetail from "../pages/News/newsDetail.vue";
+import FunctionProductList from "../pages/Function-ProductList/index.vue";
 // import Products from "../pages/Products/index.vue";
 // import ProdustsList from "../pages/Products/List.vue";
 // import Employee from "../pages/EmployeeList/index.vue";
@@ -44,6 +45,10 @@ const router = createRouter({
       path: "/about",
       component: About,
     },
+    {
+      path: "/FunctionProductList",
+      component: FunctionProductList,
+    },
     // {
     //   path: "/Products",
     //   component: Products,
@@ -74,10 +79,12 @@ const router = createRouter({
     //   ],
     // },
     {
+      //練習後台功能-登入
       path: "/LoginvView",
       component: LoginvView,
     },
     {
+      //練習後台功能-首頁
       path: "/Dashboard",
       component: Dashboard,
       // 簡單的守衛：沒登入就踢回登入頁

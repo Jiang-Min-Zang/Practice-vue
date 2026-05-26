@@ -4,8 +4,8 @@
     <img src="../assets/common/vue.svg" alt="" />
     <hr />
     <nav>
-      <li><RouterLink to="/about">測試轉導1</RouterLink></li>
-      <li><RouterLink to="/news">測試轉導2</RouterLink></li>
+      <li><RouterLink to="/FunctionProductList">購物車</RouterLink></li>
+      <li><RouterLink to="/about">測試轉導2</RouterLink></li>
     </nav>
   </div>
   <hr />

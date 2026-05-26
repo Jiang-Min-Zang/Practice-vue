@@ -9,4 +9,6 @@
 
 //負責轉發
 export * from "./user";
-// export * from './auth';     // 以後有其他模組就這樣一直接下去
+export * from "./auth";
+export * from "./product";
+// 以後有其他模組就這樣一直接下去

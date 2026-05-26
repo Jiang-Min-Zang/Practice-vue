@@ -1,6 +1,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import router from "../router";
+import { authApi } from "../api/auth";
 import Swal from "sweetalert2";
 
 export const useLogin = () => {
@@ -64,6 +65,7 @@ export const useLogin = () => {
         const res = await axios.get(
           `http://localhost:3000/users?email=${formData.value.email}&password=${formData.value.password}`,
         );
+
         // console.log(res, "--------------------");
         if (res.data.length > 0) {
           localStorage.setItem("users", JSON.stringify(res.data[0]));
@@ -74,6 +76,9 @@ export const useLogin = () => {
             icon: "success",
             timer: 3000,
             position: "top",
+            confirmButtonText: "我知道了",
+          }).then(() => {
+            window.location.href = "/Dashboard"; //強制更新
           });
           router.push("/Dashboard");
         } else {
