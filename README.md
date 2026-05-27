@@ -68,3 +68,7 @@ hook -->拆出login邏輯、簡單的後臺管理系統
 2. 進度規劃
    (1.db.json資料放到api資料夾的product.ts 並且父層能夠導入2.寫一個共用組件card，index.vue prop資料進來(web,mobile,平板,縮圖)
    3.index.vue 寫出三種RWD狀態4.寫一個購物車彈窗組件5.開始寫JS邏輯)
+
+## 0527
+
+api資料夾完成，成功Prop進子組件ProductCard 待排版
