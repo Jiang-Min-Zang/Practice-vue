@@ -72,3 +72,8 @@ hook -->拆出login邏輯、簡單的後臺管理系統
 ## 0527
 
 api資料夾完成，成功Prop進子組件ProductCard 待排版
+
+## 0529
+
+1. 完成共用組件card，index RWD
+2. 購物車組件開始切版

@@ -4,6 +4,7 @@ import axios from "axios";
 import { type FunctionProductList } from "../../types";
 import { getProductList } from "../../api/product";
 import ProductCard from "../../components/ProductCard.vue";
+import CartList from "../../components/CartList.vue";
 
 const products = ref<FunctionProductList[]>([]);
 onMounted(async () => {
@@ -17,19 +18,41 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="">
-    <router-link to="/" class="btn btn-outline-primary">回導覽列</router-link>
+  <div class="custom-min-wrapper">
+    <div class="container my-5 mx-3">
+      <div class="other">
+        <router-link to="/" class="btn btn-outline-primary"
+          >回導覽列</router-link
+        >
+        <h1 class="mb-4 fw-bold">Desserts</h1>
+      </div>
 
-    <p>目前抓到的商品數量：{{ products.length }} 筆</p>
-    <!-- <div v-for="(item, index) in products" :key="index">
-      <img :src="item.image.mobile" alt="" />
-    </div> -->
-  </div>
-  <div v-if="products.length > 0">
-    <div v-for="item in products" :key="item.id">
-      <ProductCard :data="item" />
+      <div class="row">
+        <div class="col-12 col-md-10 productlist">
+          <div v-if="products.length > 0" class="row row-cols-1 row-cols-md-3">
+            <div v-for="item in products" :key="item.id">
+              <ProductCard :data="item" class="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-2">
+          <p>未來要放購物車</p>
+          <div>
+            <CartList />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom-min-wrapper {
+  min-width: 375px;
+  overflow-x: auto;
+  .other {
+    text-align: left;
+  }
+}
+</style>
