@@ -2,9 +2,13 @@
 import { ref, computed, watch } from "vue";
 import type { FunctionProductList } from "../types";
 
-defineProps<{
+const props = defineProps<{
   data: FunctionProductList;
 }>();
+const addCardItem = () => {
+  console.log(props.data.name, "餐點名稱");
+  console.log(props.data.price, "餐點價格");
+};
 </script>
 
 <template>
@@ -23,7 +27,10 @@ defineProps<{
         />
       </picture>
       <div class="position-absolute top-100 start-50 translate-middle">
-        <button class="btn btn-outline-warning button-color">
+        <button
+          class="btn btn-outline-warning button-color"
+          @click="addCardItem"
+        >
           <img
             src="../../public/Function-ProductList/images/icon-add-to-cart.svg"
             alt=""

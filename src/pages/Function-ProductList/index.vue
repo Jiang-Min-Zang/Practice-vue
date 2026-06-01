@@ -6,6 +6,14 @@ import { getProductList } from "../../api/product";
 import ProductCard from "../../components/ProductCard.vue";
 import CartList from "../../components/CartList.vue";
 
+const myCart = ref<any[]>([
+  {
+    name: "Chocolate Cream",
+    price: 15,
+    quantity: 1,
+  },
+]);
+
 const products = ref<FunctionProductList[]>([]);
 onMounted(async () => {
   try {
@@ -28,7 +36,7 @@ onMounted(async () => {
       </div>
 
       <div class="row">
-        <div class="col-12 col-md-10 productlist">
+        <div class="col-12 col-md-9 productlist">
           <div v-if="products.length > 0" class="row row-cols-1 row-cols-md-3">
             <div v-for="item in products" :key="item.id">
               <ProductCard :data="item" class="" />
@@ -36,11 +44,8 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="col-12 col-md-2">
-          <p>未來要放購物車</p>
-          <div>
-            <CartList />
-          </div>
+        <div class="col-12 col-md-3">
+          <CartList :data="myCart" />
         </div>
       </div>
     </div>

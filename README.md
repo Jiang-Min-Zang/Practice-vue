@@ -77,3 +77,8 @@ api資料夾完成，成功Prop進子組件ProductCard 待排版
 
 1. 完成共用組件card，index RWD
 2. 購物車組件開始切版
+
+## 0601
+
+1. 購物車組件框架完成
+2. 準備開始-ProductCard組件 新增按鈕-->回傳到index的myCart -->成功讓購物車組件有資料
