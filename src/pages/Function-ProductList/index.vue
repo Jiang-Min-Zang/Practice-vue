@@ -7,12 +7,24 @@ import ProductCard from "../../components/ProductCard.vue";
 import CartList from "../../components/CartList.vue";
 
 const myCart = ref<any[]>([
-  {
-    name: "Chocolate Cream",
-    price: 15,
-    quantity: 1,
-  },
+  // {
+  //   name: "Chocolate Cream",
+  //   price: 15,
+  //   quantity: 1,
+  // },
 ]);
+
+const handleAddToCart = (product: FunctionProductList) => {
+  const existItem = myCart.value.find((item) => item.name === product.name);
+  if (existItem) {
+    existItem.quantity++;
+  } else {
+    myCart.value.push({
+      ...product,
+      quantity: 1,
+    });
+  }
+};
 
 const products = ref<FunctionProductList[]>([]);
 onMounted(async () => {
@@ -39,7 +51,7 @@ onMounted(async () => {
         <div class="col-12 col-md-9 productlist">
           <div v-if="products.length > 0" class="row row-cols-1 row-cols-md-3">
             <div v-for="item in products" :key="item.id">
-              <ProductCard :data="item" class="" />
+              <ProductCard :data="item" @add-meal="handleAddToCart" class="" />
             </div>
           </div>
         </div>

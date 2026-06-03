@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
 import type { FunctionProductList } from "../types";
-defineProps<{
+const props = defineProps<{
   data: any[];
 }>();
+
+const totalCount = computed(() => {
+  return props.data.reduce((sum, item) => sum + item.quantity, 0);
+});
+const totalPrice = computed(() => {
+  return props.data.reduce((sum, item) => sum + item.price * item.quantity, 0);
+});
 </script>
 
 <template>
@@ -20,11 +27,11 @@ defineProps<{
     </div>
   </div>
 
-  <div v-else v-for="item in data" :key="item" class="cartList">
+  <div v-else class="cartList">
     <div class="cartList-title">
-      <h4>Your Cart({{ item.quantity }})</h4>
+      <h4>Your Cart({{ totalCount }})</h4>
     </div>
-    <div class="product-layout">
+    <div v-for="item in data" :key="item.name" class="product-layout">
       <div class="product-item">
         <div class="product-name">
           {{ item.name }}
@@ -45,7 +52,7 @@ defineProps<{
     <hr />
     <div class="checkout">
       <p>Order Total</p>
-      <p>comuted</p>
+      <p>${{ totalPrice }}</p>
     </div>
     <div class="checkout-span">
       <span>Comfirm Order</span>

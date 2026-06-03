@@ -5,9 +5,12 @@ import type { FunctionProductList } from "../types";
 const props = defineProps<{
   data: FunctionProductList;
 }>();
+const emit = defineEmits<{
+  (e: "add-meal", product: FunctionProductList): void;
+}>();
 const addCardItem = () => {
   console.log(props.data.name, "餐點名稱");
-  console.log(props.data.price, "餐點價格");
+  emit("add-meal", props.data);
 };
 </script>
 

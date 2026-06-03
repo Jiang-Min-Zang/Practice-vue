@@ -8,13 +8,13 @@ import { reactive } from "vue";
 // import LoveTalk from "./components/LoveTalk.vue";
 // import watch from "./components/watch.vue";
 
-import { type Persons } from "./types";
+// import { type Persons } from "./types";
 
-let personList = reactive<Persons>([
-  { id: "1", name: "張三", age: 18 },
-  { id: "2", name: "旻展", age: 27 },
-  { id: "3", name: "靜雯", age: 30, x: 7 },
-]);
+// let personList = reactive<Persons>([
+//   { id: "1", name: "張三", age: 18 },
+//   { id: "2", name: "旻展", age: 27 },
+//   { id: "3", name: "靜雯", age: 30, x: 7 },
+// ]);
 // console.log(personList);
 import { RouterView } from "vue-router";
 </script>
