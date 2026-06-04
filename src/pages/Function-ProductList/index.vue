@@ -5,13 +5,15 @@ import { type FunctionProductList } from "../../types";
 import { getProductList } from "../../api/product";
 import ProductCard from "../../components/ProductCard.vue";
 import CartList from "../../components/CartList.vue";
+import CheckoutModal from "../../components/CheckoutModal.vue";
 
 const myCart = ref<any[]>([
-  // {
-  //   name: "Chocolate Cream",
-  //   price: 15,
-  //   quantity: 1,
-  // },
+  {
+    name: "Chocolate Cream",
+    price: 15,
+    quantity: 1,
+    img: 123,
+  },
 ]);
 
 const handleAddToCart = (product: FunctionProductList) => {
@@ -26,6 +28,14 @@ const handleAddToCart = (product: FunctionProductList) => {
   }
 };
 
+const handleRemoveItem = (product: FunctionProductList) => {
+  const index = myCart.value.findIndex((item) => item.name === product);
+  if (index !== -1) {
+    // console.log(index);
+    myCart.value.splice(index, 1);
+  }
+};
+
 const products = ref<FunctionProductList[]>([]);
 onMounted(async () => {
   try {
@@ -35,6 +45,7 @@ onMounted(async () => {
     console.log("圖片抓取失敗", error);
   }
 });
+const isModalOpen = ref(true);
 </script>
 
 <template>
@@ -57,7 +68,15 @@ onMounted(async () => {
         </div>
 
         <div class="col-12 col-md-3">
-          <CartList :data="myCart" />
+          <CartList :data="myCart" @remove="handleRemoveItem" />
+        </div>
+
+        <div>
+          <CheckoutModal
+            :data="myCart"
+            :isOpen="isModalOpen"
+            @close="isModalOpen = false"
+          />
         </div>
       </div>
     </div>

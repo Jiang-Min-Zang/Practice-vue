@@ -8,9 +8,16 @@ const props = defineProps<{
 const totalCount = computed(() => {
   return props.data.reduce((sum, item) => sum + item.quantity, 0);
 });
+
 const totalPrice = computed(() => {
   return props.data.reduce((sum, item) => sum + item.price * item.quantity, 0);
 });
+const emit = defineEmits<{
+  (e: "remove", name: FunctionProductList): void;
+}>();
+const removeItem = (itemName: FunctionProductList) => {
+  emit("remove", itemName);
+};
 </script>
 
 <template>
@@ -38,7 +45,8 @@ const totalPrice = computed(() => {
         </div>
         <div class="product-centent">
           <div class="product-amount">{{ item.quantity }}x</div>
-          <div class="product-price">${{ item.price }}</div>
+          <div>${{ item.price.toFixed(1) * item.quantity }}</div>
+          <div class="product-price">${{ item.price.toFixed(1) }}</div>
         </div>
       </div>
       <div class="刪除按鈕">
@@ -46,6 +54,7 @@ const totalPrice = computed(() => {
           type="button"
           class="btn-close btn-close-black"
           aria-label="Close"
+          @click="removeItem(item.name)"
         ></button>
       </div>
     </div>
@@ -86,8 +95,12 @@ const totalPrice = computed(() => {
   .product-centent {
     display: flex;
     justify-content: space-between;
+    width: 120px;
     .product-amount {
       color: rgb(188, 78, 44);
+    }
+    .product-price {
+      color: black;
     }
   }
 }
@@ -95,6 +108,8 @@ const totalPrice = computed(() => {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 20px;
+  color: black;
 }
 .checkout-span {
   display: flex;

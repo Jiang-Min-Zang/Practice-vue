@@ -81,4 +81,9 @@ api資料夾完成，成功Prop進子組件ProductCard 待排版
 ## 0601
 
 1. 購物車組件框架完成
-2. 準備開始-ProductCard組件 新增按鈕-->回傳到index的myCart -->成功讓購物車組件有資料
+2. 準備開始-ProductCard組件 新增按鈕-->回傳到index的myCart -->成功讓CartList組件有資料
+
+## 0604
+
+1. CartList組件完成
+2. 結帳彈窗進行中
