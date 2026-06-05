@@ -14,9 +14,13 @@ const totalPrice = computed(() => {
 });
 const emit = defineEmits<{
   (e: "remove", name: FunctionProductList): void;
+  (e: "open-modal"): void;
 }>();
 const removeItem = (itemName: FunctionProductList) => {
   emit("remove", itemName);
+};
+const confirmOrder = () => {
+  emit("open-modal");
 };
 </script>
 
@@ -61,10 +65,10 @@ const removeItem = (itemName: FunctionProductList) => {
     <hr />
     <div class="checkout">
       <p>Order Total</p>
-      <p>${{ totalPrice }}</p>
+      <p>${{ totalPrice.toFixed(2) }}</p>
     </div>
     <div class="checkout-span">
-      <span>Comfirm Order</span>
+      <span @click="confirmOrder">Comfirm Order</span>
     </div>
   </div>
 </template>

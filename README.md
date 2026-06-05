@@ -62,28 +62,11 @@ hook -->拆出login邏輯、簡單的後臺管理系統
 1. 新增api資料夾，新增預設ts檔，後續將登入跟管理流程補上
 2. 開始第一份切版網頁-購物車(Product list with cart)
 
-## 0526
+## 購物車(Product list with cart)
 
-1. 成功取得圖片資料 db-json路徑
+1. 成功取得圖片資料 db-json路徑 ，圖片放在public資料夾
 2. 進度規劃
    (1.db.json資料放到api資料夾的product.ts 並且父層能夠導入2.寫一個共用組件card，index.vue prop資料進來(web,mobile,平板,縮圖)
    3.index.vue 寫出三種RWD狀態4.寫一個購物車彈窗組件5.開始寫JS邏輯)
-
-## 0527
-
-api資料夾完成，成功Prop進子組件ProductCard 待排版
-
-## 0529
-
-1. 完成共用組件card，index RWD
-2. 購物車組件開始切版
-
-## 0601
-
-1. 購物車組件框架完成
-2. 準備開始-ProductCard組件 新增按鈕-->回傳到index的myCart -->成功讓CartList組件有資料
-
-## 0604
-
-1. CartList組件完成
-2. 結帳彈窗進行中
+3. 已大致完成(5/25~6/5) 使用到的功能(Prop、Emit，Array的find、reduce、findIndex)
+4. 比較不懂的部分是emit

@@ -8,12 +8,12 @@ import CartList from "../../components/CartList.vue";
 import CheckoutModal from "../../components/CheckoutModal.vue";
 
 const myCart = ref<any[]>([
-  {
-    name: "Chocolate Cream",
-    price: 15,
-    quantity: 1,
-    img: 123,
-  },
+  // {
+  //   name: "Chocolate Cream",
+  //   price: 15,
+  //   quantity: 1,
+  //   img: 123,
+  // },
 ]);
 
 const handleAddToCart = (product: FunctionProductList) => {
@@ -25,6 +25,7 @@ const handleAddToCart = (product: FunctionProductList) => {
       ...product,
       quantity: 1,
     });
+    // console.log(myCart);
   }
 };
 
@@ -45,7 +46,7 @@ onMounted(async () => {
     console.log("圖片抓取失敗", error);
   }
 });
-const isModalOpen = ref(true);
+const isModalOpen = ref(false);
 </script>
 
 <template>
@@ -68,7 +69,11 @@ const isModalOpen = ref(true);
         </div>
 
         <div class="col-12 col-md-3">
-          <CartList :data="myCart" @remove="handleRemoveItem" />
+          <CartList
+            :data="myCart"
+            @remove="handleRemoveItem"
+            @open-modal="isModalOpen = true"
+          />
         </div>
 
         <div>
