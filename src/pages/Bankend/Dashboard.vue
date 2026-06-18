@@ -7,6 +7,10 @@
           <button @click="handleLogout" class="btn btn-outline-danger">
             登出
           </button>
+
+          <button @click="toggleTheme" class="btn btn-secondary">
+            當前模式：{{ theme === "light" ? "🌞 明亮" : "🌙 暗黑" }}
+          </button>
         </template>
       </Navbar>
       <!-- <button @click="handleLogout" class="btn btn-outline-danger">登出</button> -->
@@ -49,6 +53,7 @@
                   class="btn btn-warning me-2"
                   @click="openEditModal(user)"
                 >
+                  <i-svg-spinners:12-dots-scale-rotate />
                   編輯
                 </button>
                 <button
@@ -56,6 +61,7 @@
                   class="btn btn-danger"
                   @click="deleteUser(user.id)"
                 >
+                  <i-lucide:badge-x />
                   刪除
                 </button>
               </td>
@@ -123,6 +129,8 @@
 <script setup>
 import { useUserManage } from "../../hooks/useUserManage";
 import Navbar from "../../components/Navbar.vue";
+import { useTheme } from "@/hooks/useTheme";
+const { theme, toggleTheme } = useTheme();
 const {
   userList,
   isAdmin,
@@ -137,6 +145,10 @@ const {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 .topBar {
   display: flex;
   padding: 10px;

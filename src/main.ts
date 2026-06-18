@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
+import "@/styles/index.css";
 // import test from "./project/test.vue";  取一個名字放到createAPP裡+上題目的主檔案路徑
 
 // 引入pinia

@@ -1,0 +1,22 @@
+/* 預設的明亮模式 */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --menu-bg: #f5f7fa;
+}
+
+/* 當 <html> 標籤被加上 class="dark" 時，自動切換成這套暗黑變數 */
+html.dark {
+  --bg-color: #121212;
+  --text-color: #e5e5e5;
+  --menu-bg: #1f1f1f;
+}
+
+/* 讓全域的 body 直接套用變數 */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.5s,
+    color 0.5s; /* 加上過場動畫，切換時才不會太刺眼 */
+}

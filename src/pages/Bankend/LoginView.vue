@@ -24,6 +24,8 @@ import Login from "../../components/Login.vue";
 
 <style lang="scss" scoped>
 .container-box {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   .container-login {
     display: flex;
     justify-content: center;

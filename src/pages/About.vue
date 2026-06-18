@@ -2,6 +2,7 @@
   <div class="about">
     <router-link to="/" class="button-style">回導覽列</router-link>
     <h2>這是說明</h2>
+    <i-bi-cart style="font-size: 24px; color: royalblue" />
     <bootstrap-test />
   </div>
 </template>
