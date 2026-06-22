@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
-import type { FunctionProductList } from "../types";
+import type { FunctionProductList } from "../../types";
 
 const props = defineProps<{
   data: FunctionProductList;

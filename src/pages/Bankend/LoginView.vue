@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
-import Login from "../../components/Login.vue";
+import Login from "@/components/backend/Login.vue";
 </script>
 
 <template>

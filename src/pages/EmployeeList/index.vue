@@ -21,6 +21,12 @@ const employees = [
     position: "專案經理",
     content: "老闆的想法好難抓",
   },
+  {
+    id: "E004",
+    name: "小名",
+    position: "QA",
+    content: "這是什麼?",
+  },
 ];
 </script>
 

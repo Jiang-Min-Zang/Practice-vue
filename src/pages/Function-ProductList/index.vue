@@ -3,9 +3,9 @@ import { ref, computed, watch, onMounted } from "vue";
 import axios from "axios";
 import { type FunctionProductList } from "../../types";
 import { getProductList } from "../../api/product";
-import ProductCard from "../../components/ProductCard.vue";
-import CartList from "../../components/CartList.vue";
-import CheckoutModal from "../../components/CheckoutModal.vue";
+import ProductCard from "@/components/Function-ProductList/ProductCard.vue";
+import CartList from "@/components/Function-ProductList/CartList.vue";
+import CheckoutModal from "@/components/Function-ProductList/CheckoutModal.vue";
 
 const myCart = ref<any[]>([
   // {
