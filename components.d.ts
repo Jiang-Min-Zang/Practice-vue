@@ -23,7 +23,7 @@ declare module 'vue' {
     'ISvgSpinners:12DotsScaleRotate': typeof import('~icons/svg-spinners/12-dots-scale-rotate')['default']
     Login: typeof import('./src/components/backend/Login.vue')['default']
     LoveTalk: typeof import('./src/components/LoveTalk.vue')['default']
-    Navbar: typeof import('./src/components/Navbar.vue')['default']
+    Navbar: typeof import('./src/components/backend/Navbar.vue')['default']
     Person: typeof import('./src/components/Person.vue')['default']
     ProductCard: typeof import('./src/components/Function-ProductList/ProductCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

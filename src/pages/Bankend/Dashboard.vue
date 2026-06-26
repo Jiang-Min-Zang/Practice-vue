@@ -22,7 +22,7 @@
             <a class="nav-link" href="#">首頁</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">權限設定</a>
+            <router-link class="nav-link" to="/goods">菜單管理</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">還在想</a>
@@ -128,7 +128,7 @@
 
 <script setup>
 import { useUserManage } from "../../hooks/useUserManage";
-import Navbar from "../../components/Navbar.vue";
+import Navbar from "@/components/backend/Navbar.vue";
 import { useTheme } from "@/hooks/useTheme";
 const { theme, toggleTheme } = useTheme();
 const {

@@ -12,4 +12,5 @@
 export * from "./user";
 export * from "./auth";
 export * from "./product";
+export * from "./GoodItem";
 // 以後有其他模組就這樣一直接下去

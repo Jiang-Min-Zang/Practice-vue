@@ -5,7 +5,7 @@
     <hr />
     <nav>
       <li><RouterLink to="/FunctionProductList">購物車</RouterLink></li>
-      <li><RouterLink to="/about">測試轉導2</RouterLink></li>
+      <li><RouterLink to="/about">測試轉導-about</RouterLink></li>
     </nav>
   </div>
   <hr />

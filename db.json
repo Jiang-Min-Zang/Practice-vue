@@ -1,4 +1,83 @@
 {
+  "roles": [
+    {
+      "id": "admin",
+      "name": "超級管理員",
+      "menuIds": ["1", "2", "3"]
+    },
+    {
+      "id": "user",
+      "name": "普通會員",
+      "menuIds": ["1", "2"]
+    }
+  ],
+  "menus": [
+    {
+      "id": "1",
+      "name": "首頁",
+      "path": "/home"
+    },
+    {
+      "id": "2",
+      "name": "商品管理",
+      "path": "/goods"
+    },
+    {
+      "id": "3",
+      "name": "用戶管理",
+      "path": "/user"
+    }
+  ],
+  "goods": [
+    {
+      "id": "g_1",
+      "title": "2026 最新款智慧機械錶",
+      "price": 12800,
+      "stock": 50,
+      "status": "1",
+      "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+    },
+    {
+      "id": "g_2",
+      "title": "極簡質感降噪耳機",
+      "price": 6400,
+      "stock": 120,
+      "status": "1",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+    },
+    {
+      "id": "g_3",
+      "title": "復古皮革單眼相機包",
+      "price": 3200,
+      "stock": 85,
+      "status": "0",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"
+    },
+    {
+      "id": "g_4",
+      "title": "極速外接行動固態硬碟 1TB",
+      "price": 4500,
+      "stock": 200,
+      "status": "0",
+      "imageUrl": "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500"
+    },
+    {
+      "id": "g_5",
+      "title": "智慧語音曲面鬧鐘喇叭",
+      "price": 1980,
+      "stock": 15,
+      "status": "0",
+      "imageUrl": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500"
+    },
+    {
+      "id": "g_6",
+      "title": "人體工學機械式鍵盤 (茶軸)",
+      "price": 3800,
+      "stock": 0,
+      "status": "1",
+      "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500"
+    }
+  ],
   "users": [
     {
       "username": "Jacky",
@@ -44,7 +123,7 @@
         "tablet": "/Function-ProductList/images/image-waffle-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-waffle-desktop.jpg"
       },
-      "id": 1,
+      "id": "1",
       "name": "Waffle with Berries",
       "category": "Waffle",
       "price": 6.5
@@ -56,10 +135,10 @@
         "tablet": "/Function-ProductList/images/image-creme-brulee-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-creme-brulee-desktop.jpg"
       },
-      "id": 2,
+      "id": "2",
       "name": "Vanilla Bean Crème Brûlée",
       "category": "Crème Brûlée",
-      "price": 7.0
+      "price": 7
     },
     {
       "image": {
@@ -68,10 +147,10 @@
         "tablet": "/Function-ProductList/images/image-macaron-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-macaron-desktop.jpg"
       },
-      "id": 3,
+      "id": "3",
       "name": "Macaron Mix of Five",
       "category": "Macaron",
-      "price": 8.0
+      "price": 8
     },
     {
       "image": {
@@ -80,7 +159,7 @@
         "tablet": "/Function-ProductList/images/image-tiramisu-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-tiramisu-desktop.jpg"
       },
-      "id": 4,
+      "id": "4",
       "name": "Classic Tiramisu",
       "category": "Tiramisu",
       "price": 5.5
@@ -92,10 +171,10 @@
         "tablet": "/Function-ProductList/images/image-baklava-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-baklava-desktop.jpg"
       },
-      "id": 5,
+      "id": "5",
       "name": "Pistachio Baklava",
       "category": "Baklava",
-      "price": 4.0
+      "price": 4
     },
     {
       "image": {
@@ -104,10 +183,10 @@
         "tablet": "/Function-ProductList/images/image-meringue-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-meringue-desktop.jpg"
       },
-      "id": 6,
+      "id": "6",
       "name": "Lemon Meringue Pie",
       "category": "Pie",
-      "price": 5.0
+      "price": 5
     },
     {
       "image": {
@@ -116,7 +195,7 @@
         "tablet": "/Function-ProductList/images/image-cake-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-cake-desktop.jpg"
       },
-      "id": 7,
+      "id": "7",
       "name": "Red Velvet Cake",
       "category": "Cake",
       "price": 4.5
@@ -128,7 +207,7 @@
         "tablet": "/Function-ProductList/images/image-brownie-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-brownie-desktop.jpg"
       },
-      "id": 8,
+      "id": "8",
       "name": "Salted Caramel Brownie",
       "category": "Brownie",
       "price": 4.5
@@ -140,7 +219,7 @@
         "tablet": "/Function-ProductList/images/image-panna-cotta-tablet.jpg",
         "desktop": "/Function-ProductList/images/image-panna-cotta-desktop.jpg"
       },
-      "id": 9,
+      "id": "9",
       "name": "Vanilla Panna Cotta",
       "category": "Panna Cotta",
       "price": 6.5

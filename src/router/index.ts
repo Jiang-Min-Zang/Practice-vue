@@ -98,6 +98,12 @@ const router = createRouter({
       },
     },
     {
+      path: "/goods",
+      name: "GoodsManagement",
+      component: () => import("@/pages/Bankend/GoodsManagement.vue"),
+      //懶加載
+    },
+    {
       path: "/",
       redirect: "/home", //當訪問，直接轉去首頁
     },
