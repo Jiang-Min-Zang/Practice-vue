@@ -84,6 +84,12 @@
             <td>
               <select
                 v-model="item.status"
+                @change="
+                  handleUpdateStatus(
+                    item.id,
+                    ($event.target as HTMLSelectElement).value,
+                  )
+                "
                 class="form-select form-select-sm mx-auto"
                 style="width: 100px"
               >
@@ -91,14 +97,20 @@
                 <option value="0">禁用</option>
               </select>
             </td>
-            <td class="text-secondary">2026-06-24 17:40:00</td>
+            <td class="text-secondary">
+              {{ item.updateTime || "已設置" }}
+            </td>
             <td>{{ item.updater || "admin" }}</td>
             <td>
-              <button class="btn btn-link btn-sm text-decoration-none me-1 p-0">
+              <button
+                @click="showDetail(item)"
+                class="btn btn-link btn-sm text-decoration-none me-1 p-0"
+              >
                 詳情
               </button>
               <span class="text-muted small">|</span>
               <button
+                @click="handleDeleteGoods"
                 class="btn btn-link btn-sm text-decoration-none text-danger p-0 ms-1"
               >
                 刪除
@@ -108,30 +120,36 @@
         </tbody>
       </table>
     </div>
+    <DetailModal
+      :is-open="isDetailModalOpen"
+      :item="currentDetail"
+      @close="isDetailModalOpen = false"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-// import { ref, onMounted } from "vue";
-// import { type GoodsItem } from "@/types";
+import { ref } from "vue";
+import DetailModal from "@/components/backend/DetailModal.vue";
 import { useGoodTable } from "@/hooks/useGoodsTable";
-// import axios from "axios";
-const { goodsList, searchForm, handleSearch, handleReset, handleCreateGoods } =
-  useGoodTable();
-// const goodsList = ref<GoodsItem[]>([]);
 
-// const fetchGoods = async () => {
-//   try {
-//     const res = await axios.get("http://localhost:3000/goods");
-//     goodsList.value = res.data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+const {
+  goodsList,
+  searchForm,
+  handleSearch,
+  handleReset,
+  handleCreateGoods,
+  handleUpdateStatus,
+  handleDeleteGoods,
+} = useGoodTable();
 
-// onMounted(() => {
-//   fetchGoods();
-// });
+const isDetailModalOpen = ref(false);
+const currentDetail = ref<any>(null);
+const showDetail = (item: any) => {
+  currentDetail.value = item;
+  isDetailModalOpen.value = true;
+  // console.log("有點下去嗎");
+};
 </script>
 
 <style>
