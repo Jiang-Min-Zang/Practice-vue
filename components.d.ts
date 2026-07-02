@@ -32,6 +32,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ShoppingCart: typeof import('./src/components/shopping-cart.vue')['default']
     ShowDetail: typeof import('./src/components/backend/showDetail.vue')['default']
+    Sidebar: typeof import('./src/components/backend/Sidebar.vue')['default']
     VBind: typeof import('./src/components/v-bind.vue')['default']
     Watch: typeof import('./src/components/watch.vue')['default']
   }

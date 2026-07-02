@@ -42,7 +42,7 @@ export const useUserManage = () => {
 
   onMounted(() => {
     fetchUsers();
-    console.log("我有被喚醒嗎---------------------");
+    // console.log("我有被喚醒嗎---------------------");
   });
 
   const isModalOpen = ref(false);

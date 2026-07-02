@@ -3,12 +3,12 @@
     {
       "id": "admin",
       "name": "超級管理員",
-      "menuIds": ["1", "2", "3"]
+      "menuIds": ["1", "2"]
     },
     {
       "id": "user",
       "name": "普通會員",
-      "menuIds": ["1", "2"]
+      "menuIds": ["1"]
     }
   ],
   "menus": [

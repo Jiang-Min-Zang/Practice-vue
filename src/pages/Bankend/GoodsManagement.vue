@@ -131,6 +131,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DetailModal from "@/components/backend/DetailModal.vue";
+import Sidebar from "@/components/backend/Sidebar.vue";
 import { useGoodTable } from "@/hooks/useGoodsTable";
 
 const {

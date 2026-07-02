@@ -1,7 +1,6 @@
 import { ref } from "vue";
 import axios from "axios";
 import router from "../router";
-import { authApi } from "../api/auth";
 import Swal from "sweetalert2";
 
 export const useLogin = () => {
@@ -68,8 +67,14 @@ export const useLogin = () => {
 
         // console.log(res, "--------------------");
         if (res.data.length > 0) {
+          // 1. 拿著登入者的 role去roles表撈通行證
+          const roleRes = await axios.get(
+            `http://localhost:3000/roles/${res.data[0].role}`,
+          );
+          // 2. 把撈到的 menuIds (例如 ["1", "2"]) 偷偷塞進你原本的 user 資料裡
+          res.data[0].menuIds = roleRes.data.menuIds;
           localStorage.setItem("users", JSON.stringify(res.data[0]));
-          console.log("users", JSON.stringify(res.data[0]));
+          // console.log("users", JSON.stringify(res.data[0]));
           // alert("登入成功，歡迎" + res.data[0].username);
           Swal.fire({
             title: "登入成功，歡迎" + res.data[0].username,

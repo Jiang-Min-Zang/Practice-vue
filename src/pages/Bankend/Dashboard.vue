@@ -17,7 +17,8 @@
     </div>
     <div class="row">
       <div class="col-sm-2">
-        <nav class="nav">
+        <Sidebar />
+        <!-- <nav class="nav">
           <li class="nav-item">
             <a class="nav-link" href="#">首頁</a>
           </li>
@@ -30,7 +31,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">還在想</a>
           </li>
-        </nav>
+        </nav> -->
       </div>
       <div class="col-sm-10">
         <table class="table table-hover">
@@ -129,6 +130,7 @@
 <script setup>
 import { useUserManage } from "../../hooks/useUserManage";
 import Navbar from "@/components/backend/Navbar.vue";
+import Sidebar from "@/components/backend/Sidebar.vue";
 import { useTheme } from "@/hooks/useTheme";
 const { theme, toggleTheme } = useTheme();
 const {
