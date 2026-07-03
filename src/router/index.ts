@@ -12,6 +12,7 @@ import LoginvView from "../pages/Bankend/LoginView.vue";
 import Dashboard from "../pages/Bankend/Dashboard.vue";
 import newsDetail from "../pages/News/newsDetail.vue";
 import FunctionProductList from "../pages/Function-ProductList/index.vue";
+import SunnyHills from "@/pages/SunnyHills/index.vue";
 // import Products from "../pages/Products/index.vue";
 // import ProdustsList from "../pages/Products/List.vue";
 // import Employee from "../pages/EmployeeList/index.vue";
@@ -48,6 +49,10 @@ const router = createRouter({
     {
       path: "/FunctionProductList",
       component: FunctionProductList,
+    },
+    {
+      path: "/SunnyHills",
+      component: SunnyHills,
     },
     // {
     //   path: "/Products",
