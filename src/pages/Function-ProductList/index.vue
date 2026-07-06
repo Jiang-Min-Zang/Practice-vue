@@ -50,38 +50,47 @@ const isModalOpen = ref(false);
 </script>
 
 <template>
-  <div class="custom-min-wrapper">
-    <div class="container my-5 mx-3">
-      <div class="other">
-        <router-link to="/" class="btn btn-outline-primary"
-          >回導覽列</router-link
-        >
-        <h1 class="mb-4 fw-bold">Desserts</h1>
-      </div>
+  <div class="old-page-container">
+    <div class="custom-min-wrapper">
+      <div class="container my-5 mx-3">
+        <div class="other">
+          <router-link to="/" class="btn btn-outline-primary"
+            >回導覽列</router-link
+          >
+          <h1 class="mb-4 fw-bold">Desserts</h1>
+        </div>
 
-      <div class="row">
-        <div class="col-12 col-md-9 productlist">
-          <div v-if="products.length > 0" class="row row-cols-1 row-cols-md-3">
-            <div v-for="item in products" :key="item.id">
-              <ProductCard :data="item" @add-meal="handleAddToCart" class="" />
+        <div class="row">
+          <div class="col-12 col-md-9 productlist">
+            <div
+              v-if="products.length > 0"
+              class="row row-cols-1 row-cols-md-3"
+            >
+              <div v-for="item in products" :key="item.id">
+                <ProductCard
+                  :data="item"
+                  @add-meal="handleAddToCart"
+                  class=""
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-12 col-md-3">
-          <CartList
-            :data="myCart"
-            @remove="handleRemoveItem"
-            @open-modal="isModalOpen = true"
-          />
-        </div>
+          <div class="col-12 col-md-3">
+            <CartList
+              :data="myCart"
+              @remove="handleRemoveItem"
+              @open-modal="isModalOpen = true"
+            />
+          </div>
 
-        <div>
-          <CheckoutModal
-            :data="myCart"
-            :isOpen="isModalOpen"
-            @close="isModalOpen = false"
-          />
+          <div>
+            <CheckoutModal
+              :data="myCart"
+              :isOpen="isModalOpen"
+              @close="isModalOpen = false"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -89,6 +98,12 @@ const isModalOpen = ref(false);
 </template>
 
 <style lang="scss" scoped>
+.old-page-container {
+  width: 1126px;
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto; /* 讓這個舊頁面自己置中 */
+}
 .custom-min-wrapper {
   min-width: 375px;
   overflow-x: auto;

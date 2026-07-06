@@ -88,3 +88,8 @@ hook -->拆出login邏輯、簡單的後臺管理系統
 2. 新增功能 做到一半(db.json好像沒辦法做這功能)
 3. 左側選單組件化(Sidebar)，並且設定權限admin(看的到)，
    更改位置有useLogin(hook)、pinia(userStore)
+
+## 排版練習- 0706
+
+1. 開始切版微熱山丘
+2. 發現版面最外層style.css設定到width寬度(之前的購物車跟後台會需要重新包舊的css)
