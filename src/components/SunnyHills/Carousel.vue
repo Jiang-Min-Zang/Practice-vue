@@ -5,7 +5,7 @@ import { ref, computed, watch } from "vue";
 <template>
   <div
     id="carouselExampleIndicators"
-    class="carousel slide"
+    class="carousel slide custom-carousel"
     data-bs-ride="carousel"
   >
     <div class="carousel-indicators">
@@ -74,4 +74,18 @@ import { ref, computed, watch } from "vue";
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom-carousel {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden; /* 超出這個高度的圖片切掉，不讓它亂擠 */
+
+  .carousel-inner,
+  .carousel-item,
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+</style>

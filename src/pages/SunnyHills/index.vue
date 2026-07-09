@@ -23,7 +23,7 @@ import Footer from "@/components/SunnyHills/Footer.vue";
           src="@/assets/SunnyHills/imgi_6_index210709083552490.png"
           alt=""
         />
-        <h1>微熱生活</h1>
+        <p>微熱生活</p>
       </div>
       <div class="content-box">
         <img
@@ -31,7 +31,7 @@ import Footer from "@/components/SunnyHills/Footer.vue";
           src="@/assets/SunnyHills/imgi_7_index250822161204045.jpg"
           alt=""
         />
-        <h1>陽光美點</h1>
+        <p>陽光美點</p>
       </div>
       <div class="content-box">
         <img
@@ -39,28 +39,58 @@ import Footer from "@/components/SunnyHills/Footer.vue";
           src="@/assets/SunnyHills/imgi_8_index210709083630335.png"
           alt=""
         />
-        <h1>陽光計畫</h1>
+        <p>陽光計畫</p>
       </div>
     </div>
-    <div class="">
+    <div class="Footer">
       <Footer />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.other {
+  text-align: center;
+}
 .content-box {
+  text-align: center;
+  font-size: 28px;
+  color: #595353;
   .contentimg {
-    margin: 20px 0;
+    margin: 30px 0;
   }
   > img {
     width: 100%;
   }
 }
-
+.Footer {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+  color: #827e7d;
+}
 @media (min-width: 768px) {
-  // .carousel {
-  //   width: 100vw;
-  // }
+  .other {
+    display: none;
+  }
+
+  .Main-content {
+    display: flex;
+    gap: 3px;
+    flex-direction: row;
+    .content-box {
+      font-size: 19px;
+      // padding-left: 10px;
+      margin-top: 2rem;
+      color: black;
+      text-align: left;
+      display: flex;
+      flex-direction: column-reverse;
+      .contentimg {
+        margin: 0;
+      }
+    }
+  }
 }
 </style>
