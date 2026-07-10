@@ -1,9 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import MenuDropdown from "@/components/SunnyHills/MenuDropdown.vue";
+const isMenuOpen = ref(false);
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+</script>
 
 <template>
   <div class="Navbar">
-    <button class="button">
+    <button class="button" @click="toggleMenu">
       <img src="@/assets/SunnyHills/imgi_13_menu_3.svg" alt="" />
+      <MenuDropdown v-show="isMenuOpen" @close="isMenuOpen = false" />
     </button>
     <!-- <button>
       <img src="@/assets/SunnyHills/imgi_12_logo.svg" alt="" />
@@ -13,11 +21,11 @@
     </div>
 
     <nav class="nav-menu d-none d-md-flex">
-      <a href="#">陽光燦爛的山丘</a>
-      <a href="#">各地的微熱山丘</a>
-      <a href="#">陽光美點</a>
-      <a href="#">購買方式</a>
-      <a href="#">網路購物</a>
+      <a href="#"> 陽光燦爛的山丘 </a>
+      <a href="#"> 各地的微熱山丘 </a>
+      <a href="#"> 陽光美點 </a>
+      <a href="#"> 購買方式 </a>
+      <a href="#"> 網路購物 </a>
     </nav>
   </div>
 </template>

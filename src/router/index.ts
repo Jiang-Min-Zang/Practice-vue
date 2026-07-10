@@ -54,6 +54,11 @@ const router = createRouter({
       path: "/SunnyHills",
       component: SunnyHills,
     },
+    {
+      path: "/story",
+      name: "story",
+      component: () => import("@/pages/SunnyHills/story.vue"),
+    },
     // {
     //   path: "/Products",
     //   component: Products,
