@@ -33,6 +33,7 @@ declare module 'vue' {
     ProductCard: typeof import('./src/components/Function-ProductList/ProductCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Share: typeof import('./src/components/SunnyHills/Share.vue')['default']
     ShoppingCart: typeof import('./src/components/shopping-cart.vue')['default']
     ShowDetail: typeof import('./src/components/backend/showDetail.vue')['default']
     Sidebar: typeof import('./src/components/backend/Sidebar.vue')['default']

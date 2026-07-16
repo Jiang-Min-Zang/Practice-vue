@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 </script>
 
 <template>
   <hr />
   <p>© 2025 SunnyHills. 微熱山丘</p>
-  <div class="pinned">
+  <div @click="scrollToTop" class="pinned">
     <img src="@/assets/SunnyHills/imgi_9_bt_arrow_big_top.jpg" alt="" />
   </div>
 </template>

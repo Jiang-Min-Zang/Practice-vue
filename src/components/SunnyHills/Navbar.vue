@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 import MenuDropdown from "@/components/SunnyHills/MenuDropdown.vue";
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
+};
+const goHome = () => {
+  router.push("/SunnyHills");
 };
 </script>
 
@@ -11,21 +16,25 @@ const toggleMenu = () => {
   <div class="Navbar">
     <button class="button" @click="toggleMenu">
       <img src="@/assets/SunnyHills/imgi_13_menu_3.svg" alt="" />
-      <MenuDropdown v-show="isMenuOpen" @close="isMenuOpen = false" />
+      <transition name="dropdown">
+        <MenuDropdown v-show="isMenuOpen" @close="isMenuOpen = false" />
+      </transition>
     </button>
-    <!-- <button>
-      <img src="@/assets/SunnyHills/imgi_12_logo.svg" alt="" />
-    </button> -->
-    <div class="Navbar-img">
+    <div class="Navbar-img" @click="goHome">
       <img src="@/assets/SunnyHills/imgi_12_logo.svg" alt="" />
     </div>
 
     <nav class="nav-menu d-none d-md-flex">
-      <a href="#"> 陽光燦爛的山丘 </a>
-      <a href="#"> 各地的微熱山丘 </a>
-      <a href="#"> 陽光美點 </a>
-      <a href="#"> 購買方式 </a>
-      <a href="#"> 網路購物 </a>
+      <li><router-link to="/story">陽光燦爛的山丘</router-link></li>
+      <li><router-link to="/">各地的微熱山丘</router-link></li>
+      <li><router-link to="/">陽光美點</router-link></li>
+      <li><router-link to="/">購買方式</router-link></li>
+      <li><router-link to="/">網路購物</router-link></li>
+      <!-- <a href="#"> 陽光燦爛的山丘 </a>
+      <a href="#"> </a>
+      <a href="#"> </a>
+      <a href="#"> </a>
+      <a href="#"> </a> -->
     </nav>
   </div>
 </template>
@@ -48,6 +57,7 @@ const toggleMenu = () => {
     height: 30px;
     background: none;
     border: none;
+
     z-index: 99;
 
     > img {
@@ -65,7 +75,24 @@ a {
   color: #595353;
   text-decoration: none;
 }
+li {
+  color: #595353;
+  text-decoration: none;
+  list-style: none;
+}
 
+/* 🎯 下拉選單的過渡動畫 */
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.8s ease;
+}
+
+/* 剛出現與消失時的狀態：透明度為 0，且往上縮 10px */
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
 @media (min-width: 768px) {
   .Navbar {
     justify-content: space-between;
