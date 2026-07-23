@@ -20,14 +20,14 @@ const navigateTo = (path: string) => {
 
     <ul class="menu-list">
       <li @click="navigateTo('/story')">陽光燦爛的山丘</li>
-      <li @click="navigateTo('/')">各地的微熱山丘</li>
-      <li @click="navigateTo('/')">陽光美點</li>
-      <li @click="navigateTo('/')">陽光計畫</li>
-      <li @click="navigateTo('/')">微熱生活</li>
-      <li @click="navigateTo('/')">購買方式</li>
-      <li @click="navigateTo('/')">網路購物</li>
-      <li @click="navigateTo('/')">聯絡我們</li>
-      <li @click="navigateTo('/')">檢測報告</li>
+      <li @click="navigateTo('/store')">各地的微熱山丘</li>
+      <li @click="navigateTo('/SunnyHills')">陽光美點</li>
+      <li @click="navigateTo('/SunnyHills')">陽光計畫</li>
+      <li @click="navigateTo('/SunnyHills')">微熱生活</li>
+      <li @click="navigateTo('/SunnyHills')">購買方式</li>
+      <li @click="navigateTo('/SunnyHills')">網路購物</li>
+      <li @click="navigateTo('/SunnyHills')">聯絡我們</li>
+      <li @click="navigateTo('/')">回主頁</li>
     </ul>
   </div>
 </template>

@@ -21,6 +21,7 @@ declare module 'vue' {
     DetailModal: typeof import('./src/components/backend/DetailModal.vue')['default']
     DetailModol: typeof import('./src/components/backend/DetailModol.vue')['default']
     Footer: typeof import('./src/components/SunnyHills/Footer.vue')['default']
+    Header: typeof import('./src/components/SunnyHills/store/Header.vue')['default']
     IBiCart: typeof import('~icons/bi/cart')['default']
     IEpEdit: typeof import('~icons/ep/edit')['default']
     'ILucide:badgeX': typeof import('~icons/lucide/badge-x')['default']
@@ -37,6 +38,7 @@ declare module 'vue' {
     ShoppingCart: typeof import('./src/components/shopping-cart.vue')['default']
     ShowDetail: typeof import('./src/components/backend/showDetail.vue')['default']
     Sidebar: typeof import('./src/components/backend/Sidebar.vue')['default']
+    StoreCard: typeof import('./src/components/SunnyHills/store/StoreCard.vue')['default']
     VBind: typeof import('./src/components/v-bind.vue')['default']
     Watch: typeof import('./src/components/watch.vue')['default']
   }

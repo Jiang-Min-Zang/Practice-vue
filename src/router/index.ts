@@ -59,6 +59,11 @@ const router = createRouter({
       name: "story",
       component: () => import("@/pages/SunnyHills/story.vue"),
     },
+    {
+      path: "/store",
+      name: "store",
+      component: () => import("@/pages/SunnyHills/store.vue"),
+    },
     // {
     //   path: "/Products",
     //   component: Products,

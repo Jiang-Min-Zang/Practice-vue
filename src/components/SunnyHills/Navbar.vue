@@ -26,7 +26,7 @@ const goHome = () => {
 
     <nav class="nav-menu d-none d-md-flex">
       <li><router-link to="/story">陽光燦爛的山丘</router-link></li>
-      <li><router-link to="/">各地的微熱山丘</router-link></li>
+      <li><router-link to="/store">各地的微熱山丘</router-link></li>
       <li><router-link to="/">陽光美點</router-link></li>
       <li><router-link to="/">購買方式</router-link></li>
       <li><router-link to="/">網路購物</router-link></li>
